@@ -102,4 +102,4 @@ MYSQL_DBNAME = "spiderInc"
 MYSQL_USER = "root"
 MYSQL_PASSWORD = "123456"
 
-LOG_LEVEL = 'error'
+LOG_LEVEL = 'ERROR'

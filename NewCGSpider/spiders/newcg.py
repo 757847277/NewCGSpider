@@ -18,11 +18,13 @@ class NewcgSpider(scrapy.Spider):
             url = parse.urljoin(response.url,url)
             post_img = parse.urljoin(response.url, post_img)
 
+
             yield Request(url=url, meta={'post_image_url':post_img}, callback=self.parse_detail,dont_filter=True)
 
         next_url = response.xpath('//div[@class="joggerA"]/a[last()]/@href').extract()[0]
         if next_url:
             next = parse.urljoin(response.url, next_url)
+            print(next)
             yield Request(url=next, callback=self.parse,dont_filter=True)
 
     @staticmethod
